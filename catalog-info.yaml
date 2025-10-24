@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: kontor-2-0-web-management
   title: Kontor-2.0-Web-Management
-  description: Kontor 2.0 Web yönetim paneli
+  description: Kontor 2.0 Web yÃ¶netim paneli
   tags:
     - dotnet
     - aspnet-mvc
@@ -33,8 +33,7 @@ spec:
   lifecycle: Production
   owner: Ortak Servisler
   system: Credit
-  definition:
-    $text: http://localhost:40060/CreditService.asmx?WSDL
+  definition: "http://host.docker.internal:40060/CreditService.asmx?WSDL"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -46,8 +45,7 @@ spec:
   lifecycle: Production
   owner: Ortak Servisler
   system: Credit
-  definition:
-    $text: http://localhost:40070/CreditConsumptionService.svc?wsdl
+  definition: "http://host.docker.internal:40070/CreditConsumptionService.svc?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -59,8 +57,7 @@ spec:
   lifecycle: Production
   owner: Ortak Servisler
   system: Credit
-  definition:
-    $text: http://localhost:40080/CreditManagementService.svc?wsdl
+  definition: "http://host.docker.internal:40080/CreditManagementService.svc?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -70,7 +67,6 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: OZE Teknoloji Geliþtirme Grubu
+  owner: OZE Teknoloji GeliÅŸtirme Grubu
   system: Credit
-  definition:
-    $text: http://localhost:30080/ManagementOperations.asmx?WSDL
+  definition: "http://host.docker.internal:30080/ManagementOperations.asmx?WSDL"
