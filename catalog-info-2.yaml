@@ -33,8 +33,7 @@ spec:
   lifecycle: Production
   owner: Ortak Servisler
   system: Credit
-  definition:
-    $text: http://host.docker.internal:40060/CreditService.asmx
+  definition: http://host.docker.internal:40060/CreditService.asmx
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -46,8 +45,7 @@ spec:
   lifecycle: Production
   owner: Ortak Servisler
   system: Credit
-  definition:
-    $text: http://host.docker.internal:40070/CreditConsumptionService.svc?wsdl
+  definition: http://host.docker.internal:40070/CreditConsumptionService.svc?wsdl
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -59,8 +57,7 @@ spec:
   lifecycle: Production
   owner: Ortak Servisler
   system: Credit
-  definition:
-    $text: http://host.docker.internal:40080/CreditManagementService.svc?wsdl
+  definition: http://host.docker.internal:40080/CreditManagementService.svc?wsdl
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
