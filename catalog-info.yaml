@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: kontor-2-0-web-management
-  title: Kontor-2.0-Web-Management
+  title: Kontor 2.0 Web Management
   description: Kontor 2.0 Web yönetim paneli
   tags:
     - dotnet
