@@ -65,7 +65,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: AtrosManagement API
+  name: atrosmanagement-soap
   description: AtrosManagement API
 spec:
   type: soap
