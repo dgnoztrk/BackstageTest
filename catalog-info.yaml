@@ -13,10 +13,10 @@ metadata:
     - url: https://bitbucket.org/atrosbt/credits
       title: Repository
 spec:
-  owner: Ortak Servisler
+  owner: ortak-servisler
   lifecycle: Production
   type: website
-  system: Credit
+  system: credit
   consumesApis:
     - creditservice-soap
     - creditconsumptionservice
@@ -31,8 +31,8 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: Ortak Servisler
-  system: Credit
+  owner: ortak-servisler
+  system: credit
   definition: "WSDL placeholder – HTTP isteği yapılmaz"
 ---
 apiVersion: backstage.io/v1alpha1
@@ -43,8 +43,8 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: Ortak Servisler
-  system: Credit
+  owner: ortak-servisler
+  system: credit
   definition: "WSDL placeholder – HTTP isteği yapılmaz"
 ---
 apiVersion: backstage.io/v1alpha1
@@ -55,18 +55,18 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: Ortak Servisler
-  system: Credit
+  owner: ortak-servisler
+  system: credit
   definition: "WSDL placeholder – HTTP isteği yapılmaz"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: AtrosManagement API
+  name: atrosmanagement-api
   description: AtrosManagement API
 spec:
   type: soap
   lifecycle: Production
-  owner: OZE Teknoloji Geliştirme Grubu
-  system: Credit
+  owner: oze-teknoloji-gelistirme-grubu
+  system: credit
   definition: "WSDL placeholder – HTTP isteği yapılmaz"
