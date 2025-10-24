@@ -1,166 +1,72 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: e-doc-broker
-  description: A service that handles e-docs.
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["system:parasut", "system:bizmu", "system:atlas", "system:asist"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: e-doc-broker-web
-  description: A service that handles e-docs.
+  name: kontor-2-0-web-management
+  title: Kontor 2.0 Web Management
+  description: Kontor 2.0 Web yönetim paneli
+  tags:
+    - dotnet
+    - aspnet-mvc
+    - net48
+    - wcf
   links:
-    - url: http://edocbroker.parasut.com/
-      title: E-Doc-Broker API
+    - url: https://bitbucket.org/atrosbt/credits
+      title: Repository
 spec:
-  type: service
+  owner: ortak-servisler
   lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
-  providesApi: e-doc-broker
+  type: website
+  system: credit
+  consumesApis:
+    - creditservice-soap
+    - creditconsumptionservice
+    - creditmanagementservice
+    - atrosmanagement-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: e-doc-broker-api
-  description: A service that handles e-docs.
-  links:
-    - url: http://edocbroker.parasut.com/
-      title: E-Doc-Broker API
+  name: creditservice-soap
+  description: CreditService SOAP API
 spec:
-  type: service
+  type: soap
   lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
-  providesApi: e-doc-broker
-  consumesApi: server
-  definition:
-    $text: https://github.com/parasutcom/backstage-software-catalog/blob/main/swagger.yaml
+  owner: ortak-servisler
+  system: credit
+  definition: "http://localhost:40060/CreditService.asmx?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
-  name: sidekiq-document-no
-  description: Sidekiq Document No
+  name: creditconsumptionservice
+  description: CreditConsumptionService SOAP API
 spec:
-  type: service
+  type: soap
   lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
+  owner: ortak-servisler
+  system: credit
+  definition: "http://localhost:40070/CreditConsumptionService.svc?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
-  name: sidekiq-fetch-ubl
-  description: Sidekiq Fetch UBL
+  name: creditmanagementservice
+  description: CreditManagementService SOAP API
 spec:
-  type: service
+  type: soap
   lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
+  owner: ortak-servisler
+  system: credit
+  definition: "http://localhost:40080/CreditManagementService.svc?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
-  name: sidekiq-inbound
-  description: Sidekiq Inbound
+  name: atrosmanagement-api
+  description: AtrosManagement API
 spec:
-  type: service
+  type: soap
   lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: sidekiq-migrations
-  description: Sidekiq Migrations
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: sidekiq-other
-  description: Sidekiq Other
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: sidekiq-outbound
-  description: Sidekiq Outbound
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: sidekiq-send
-  description: Sidekiq Send
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: sidekiq-sns
-  description: Sidekiq SNS
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: sidekiq-storage
-  description: Sidekiq Storage
-spec:
-  type: service
-  lifecycle: production
-  owner: group:kronos
-  system: parasut
-  domain: parasut
-  partOf: ["component:e-doc-broker"]
+  owner: oze-teknoloji-gelistirme-grubu
+  system: credit
+  definition: "http://localhost:30080/ManagementOperations.asmx?wsdl"
