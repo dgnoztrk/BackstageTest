@@ -1,4 +1,13 @@
 apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: credit
+  title: Credit Sistemi
+  description: Kredi ve Kontör altyapý servisleri sistemi
+spec:
+  owner: ortak-servisler
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: kontor-2-0-web-management
@@ -13,10 +22,10 @@ metadata:
     - url: https://bitbucket.org/atrosbt/credits
       title: Repository
 spec:
-  owner: Ortak Servisler
+  owner: ortak-servisler
   lifecycle: Production
   type: website
-  system: Credit
+  system: credit
   consumesApis:
     - creditservice-soap
     - creditconsumptionservice
@@ -31,9 +40,10 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: Ortak Servisler
-  system: Credit
-  definition: http://localhost:40060/CreditService.asmx
+  owner: ortak-servisler
+  system: credit
+  definition:
+    $text: http://host.docker.internal:40060/CreditService.asmx
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -43,9 +53,10 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: Ortak Servisler
-  system: Credit
-  definition: http://localhost:40070/CreditConsumptionService.svc?wsdl
+  owner: ortak-servisler
+  system: credit
+  definition:
+    $text: http://host.docker.internal:40070/CreditConsumptionService.svc?wsdl
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -55,9 +66,10 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: Ortak Servisler
-  system: Credit
-  definition: http://localhost:40080/CreditManagementService.svc?wsdl
+  owner: ortak-servisler
+  system: credit
+  definition:
+    $text: http://host.docker.internal:40080/CreditManagementService.svc?wsdl
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -67,6 +79,23 @@ metadata:
 spec:
   type: soap
   lifecycle: Production
-  owner: OZE Teknoloji Geliþtirme Grubu
-  system: Credit
-  definition: http://localhost:30080/ManagementOperations.asmx?wsdl
+  owner: oze-teknoloji-gelistirme-grubu
+  system: credit
+  definition: 
+    $text: http://host.docker.internal:30080/ManagementOperations.asmx?wsdl
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ortak-servisler
+  description: Ortak Servisler Ekibi
+spec:
+  type: team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: oze-teknoloji-gelistirme-grubu
+  description: OZE Teknoloji Geliþtirme Grubu
+spec:
+  type: team
