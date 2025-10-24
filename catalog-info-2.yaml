@@ -34,7 +34,7 @@ spec:
   owner: Ortak Servisler
   system: Credit
   definition:
-    $text: http://localhost:40060/CreditService.asmx?WSDL
+    $text: http://localhost:40060/CreditService.asmx
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -72,5 +72,4 @@ spec:
   lifecycle: Production
   owner: OZE Teknoloji Geliþtirme Grubu
   system: Credit
-  definition:
-    $text: http://localhost:30080/ManagementOperations.asmx?WSDL
+  definition: http://localhost:30080/ManagementOperations.asmx?wsdl
