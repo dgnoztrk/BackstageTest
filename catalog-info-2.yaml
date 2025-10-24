@@ -1,0 +1,76 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: kontor-2-0-web-management
+  title: Kontor-2.0-Web-Management
+  description: Kontor 2.0 Web yönetim paneli
+  tags:
+    - dotnet
+    - aspnet-mvc
+    - net48
+    - wcf
+  links:
+    - url: https://bitbucket.org/atrosbt/credits
+      title: Repository
+spec:
+  owner: Ortak Servisler
+  lifecycle: Production
+  type: website
+  system: Credit
+  consumesApis:
+    - creditservice-soap
+    - creditconsumptionservice
+    - creditmanagementservice
+    - atrosmanagement-soap
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: creditservice-soap
+  description: CreditService SOAP API
+spec:
+  type: soap
+  lifecycle: Production
+  owner: Ortak Servisler
+  system: Credit
+  definition:
+    $text: http://localhost:40060/CreditService.asmx?WSDL
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: creditconsumptionservice
+  description: CreditConsumptionService SOAP API
+spec:
+  type: soap
+  lifecycle: Production
+  owner: Ortak Servisler
+  system: Credit
+  definition:
+    $text: http://localhost:40070/CreditConsumptionService.svc?wsdl
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: creditmanagementservice
+  description: CreditManagementService SOAP API
+spec:
+  type: soap
+  lifecycle: Production
+  owner: Ortak Servisler
+  system: Credit
+  definition:
+    $text: http://localhost:40080/CreditManagementService.svc?wsdl
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: AtrosManagement API
+  description: AtrosManagement API
+spec:
+  type: soap
+  lifecycle: Production
+  owner: OZE Teknoloji Geliþtirme Grubu
+  system: Credit
+  definition:
+    $text: http://localhost:30080/ManagementOperations.asmx?WSDL
