@@ -33,7 +33,7 @@ spec:
   lifecycle: production
   owner: ortak-servisler
   system: credit
-  definition: "WSDL placeholder – HTTP isteği yapılmaz"
+  definition: "http://localhost:40060/CreditService.asmx?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -45,7 +45,7 @@ spec:
   lifecycle: production
   owner: ortak-servisler
   system: credit
-  definition: "WSDL placeholder – HTTP isteği yapılmaz"
+  definition: "http://localhost:40070/CreditConsumptionService.svc?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -57,7 +57,7 @@ spec:
   lifecycle: production
   owner: ortak-servisler
   system: credit
-  definition: "WSDL placeholder – HTTP isteği yapılmaz"
+  definition: "http://localhost:40080/CreditManagementService.svc?wsdl"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -69,4 +69,4 @@ spec:
   lifecycle: production
   owner: oze-teknoloji-gelistirme-grubu
   system: credit
-  definition: "WSDL placeholder – HTTP isteği yapılmaz"
+  definition: "http://localhost:30080/ManagementOperations.asmx?wsdl"
