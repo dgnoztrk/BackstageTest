@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: kontor-2-0-web-management
   title: Kontor 2.0 Web Management
-  description: Kontor 2.0 Web yönetim paneli
+  description: Kontor 2.0 web yönetim paneli
   tags:
     - dotnet
     - aspnet-mvc
